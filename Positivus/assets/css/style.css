@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -9,6 +11,10 @@
     --black: #191a23;
     --grey: #f3f3f3;
     --green:  #b9ff66;
+    --border:  #191a23;
+    --divider: #191a23;
+    --radius:  30px;
+    --anim:    0.4s ease;
 }
 
 a{
@@ -73,7 +79,7 @@ div.section-header h1{
 
 div.section-header p{
     font-size: 1em;
-    font-weight: 500;
+    font-weight: normal;
 }
 /* end UTILITIES */
 
@@ -100,7 +106,7 @@ nav img{
 .nav-items a{
     color: var(--black);
     font-size: 1.15em;
-    font-weight: 500;
+    font-weight: normal;
 }
 
 .nav-items a:hover{
@@ -138,7 +144,7 @@ nav img{
 
 .hero .flex1 p{
     font-size: 1.1em;
-    font-weight: 500;
+    font-weight: normal;
     line-height: 1.5em;
     margin-top: 2em;
 }
@@ -172,7 +178,8 @@ nav img{
     padding-top: 2.5em;
     padding-bottom: 2.5em;
     border-radius: 40px;
-    border-bottom: 4px solid var(--black);
+    border: 1px solid var(--black);
+    border-bottom: 6px solid var(--black);
     display: flex;
     justify-content: space-between;
 }
@@ -205,6 +212,7 @@ nav img{
 .services .box .box-txt h1{
     font-weight: 500;
     font-size: 1.6em;
+    padding: 5px;
     border-radius:8px;
 }
 
@@ -270,7 +278,7 @@ nav img{
 }
 .things-txt p{
     font-size: 1em;
-    font-weight: 500;
+    font-weight: normal;
     margin-top: 1.5em;
 }
 .things-txt button{
@@ -322,8 +330,174 @@ nav img{
     padding-left: 2em;
     padding-right: 2em;
 }
-
 /* END CASE STUDIES */
+
+
+/* ACCORDION */
+.accordion {
+    border: 1px solid var(--border);
+    border-bottom: 6px solid var(--black);
+    border-radius: var(--radius);
+    margin: 20px 0;
+    overflow: hidden;
+    background: var(--grey);
+    transition: all var(--anim);
+    padding: 1em;
+  }
+
+  .accordion.open {
+    background: var(--green);
+  }
+
+  .accordion-header {
+    position: relative;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Divider only when open (inset 15px each side) */
+  .accordion.open .accordion-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    height: 1px;
+    background: var(--divider);
+  }
+
+  .accordion-header span {
+    color: #333;
+    font-size: 1.5em;
+    font-weight: 500;
+    transition: color var(--anim);
+  }
+
+
+  .accordion.open .accordion-header span {
+    color: #222;
+  }
+
+  .accordion-header span.num{
+    font-size: 2em;
+    font-weight: 500;
+  }
+
+  .accordion-header span.head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+  
+
+  /* Icon wrapper */
+  .accordion-header i {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    border: 1px solid  var(--black);
+    border-radius: 50%;
+    background: var(--grey);
+    color: var(--black);
+    transition: transform var(--anim);
+  }
+
+  /* Rotate the icon slightly on toggle (optional) */
+  .accordion.open .accordion-header i {
+    transform: rotate(180deg);
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 15px;
+    background: var(--green);
+    transition:
+      max-height var(--anim),
+      opacity    var(--anim) 0.1s,
+      padding    var(--anim);
+      transition: all 0.3s;
+  }
+
+  .accordion.open .accordion-content {
+    max-height: 500px;       /* enough to fit your content */
+    opacity: 1;
+    padding: 15px;
+  }
+/* end ACCORDION */
+
+
+/* TEAM */
+.team{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    margin-bottom: 2em;
+}
+
+.team .box{
+    border: 1px solid var(--black);
+    border-bottom: 6px solid var(--black);
+    border-radius: 40px;
+    padding: 2em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.team .box img{
+    width: 100%;
+}
+
+.team .box:hover{
+    background-color: var(--green);
+}
+/* 
+.team .box img{
+    padding-bottom: 1em;
+} */
+
+.team .box p{
+    border-top: 1px solid var(--black);
+    padding-top: 1.5em;
+    font-size: 1em;
+    font-weight: normal;
+    overflow: hidden;
+}
+
+.team-btn-container{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.team-btn-container button{
+    background-color: var(--black);
+    color: var(--grey);
+    min-width: 20%
+}
+
+.team-btn-container button:hover{
+    text-decoration: underline;
+}
+/* END TEAM */
+
+
+/* TESTIMONIALS */
+
+
+
+/* END TESTIMONIALS */
 
 
 /*CONTACT */
@@ -335,7 +509,7 @@ nav img{
 }
 
 .contact img{
-    width: 250px;
+    width: 280px;
 }
 
 .contact form{
@@ -359,53 +533,49 @@ nav img{
     gap: 1.5em;
 }
 
-/* .contact .opt input{
-    background-color: var(--green);
-}
 
-.contact .opt input[type="radio"]:checked + .custom-radio{
-    background-color: var(--green);
-}
-
-.contact .opt span{
-    font-size: 1em;
-} */
-
-.radio-wrapper{
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.radio-wrapper input[type="radio"]{
-    display: none;
-}
-
-.custom-radio{
-    width: 24px;
-    height: 24px;
-    border: 2px solid #333; 
-    border-radius: 50%;
-    margin-right: 8px;
+/* hide the real radio */
+.contact .opt input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  /* make every span act as our custom radio */
+  .contact .opt label span {
     position: relative;
-    box-sizing: border-box;
-}
-
-.contact .opt input[type="radio"]:checked + .custom-radio{
-    background-color: var(--green);
-}
-
-.contact .opt input[type="radio"]:checked + .custom-radio::after{
+    padding-left: 1.6em;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* draw the circle with a black outline */
+  .contact .opt label span::before {
     content: "";
     position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 10px;
-    height: 10px;
-    background-color: var(--grey);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1em;
+    height: 1em;
+    outline: 1.5px solid var(--black);
+    border: 1px solid var(--grey);    /* always black outline */
     border-radius: 50%;
+    background: white;
+    transition: all 0.2s ease;
+  }
+  
+  /* when checked, fill it green but keep the black border */
+  .contact .opt input[type="radio"]:checked + span::before {
+    background: var(--green);
+  }
+
+.contact .opt span{
+    font-weight: 500;
 }
 
+.contact-container{
+    margin-top: 2em;
+}
 .contact-container span{
     font-size: 0.9em;
     font-weight: 500;
@@ -445,19 +615,16 @@ nav img{
     border-radius: 10px;
     transition: all 0.3s ease;
     width: 50%;
+    max-width: 50%;
     margin-top: 0.5em;
+    max-height: 150px;
+    min-height: 150px;
 }
 
 .contact-container{
     display: flex;
     align-items: center;
 }
-
-
-
-
-
-
 /* END CONTACT */
 
 
