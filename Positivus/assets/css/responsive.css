@@ -181,6 +181,7 @@
     .things{
         flex-direction: column;
         padding: 2em;
+        margin-bottom: 0;
     }
 
     .things img{
