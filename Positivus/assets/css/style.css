@@ -110,7 +110,7 @@ nav{
 }
 
 nav img{
-    width: 90%;
+    width: 85%;
 }
 
 .nav-items{
@@ -148,7 +148,16 @@ nav img{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    /* not visible */
+    opacity: 0;
+    transform: translateY(30px);
 }
+
+.hero.animate-in {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
 
 .hero .flex1{
     width: 50%;
@@ -405,7 +414,21 @@ nav img{
     /* controls shrink*/
     width: 100%;
     max-width: 1600px;
+  /* start slightly down & invisible */
+  opacity: 0;
+  transform: translateY(20px);
+  /* animate both properties, using any CSS variable delay */
+  transition:
+    transform 0.6s ease-out var(--delay, 0s),
+    opacity   0.6s ease-out var(--delay, 0s);
   }
+
+/* when scrolled into view */
+.accordion.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 
   .accordion.open {
     background: var(--green);
@@ -519,6 +542,7 @@ nav img{
     align-items: center;
     gap: 1em;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .team .box:hover{
@@ -1016,3 +1040,15 @@ footer{
     color: var(--green);
 }
 /* END FOOTER */
+
+
+@keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
