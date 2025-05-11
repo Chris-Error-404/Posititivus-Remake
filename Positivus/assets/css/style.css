@@ -100,6 +100,221 @@ section.position{
 
 
 /* HEADER */
+  /* Mobile Header */
+  header.mobile-header {
+    display: none; /* Only show in mobile using media queries */
+}
+
+/* Navbar Styles */
+nav.mobile {
+    background-color: #ffffff;
+    color: #191a23;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    margin-top: 0;
+    transition: 0.5s ease;
+}
+
+/*** INPUT ***/
+nav.mobile input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    transition: 0.5s ease;
+}
+
+/*** LABEL ***/
+nav.mobile label {
+    cursor: pointer;
+    display: block;
+    padding: 1em;
+    padding-left: 4em;
+    padding-right: 4em;
+    padding-bottom: 0.5em;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+nav.mobile label img{
+    width: 20%;
+    transition: 0.5s ease;
+}
+
+/* Hamburger Icon */
+#menu-icon,
+#menu-icon:before,
+#menu-icon:after {
+    background: #191a23;
+    border-radius: 0.05em;
+    height: 0.2em;
+    transition: all 0.2s ease-in-out;
+    width: 1.5em;
+}
+
+#menu-icon {
+    display: inline-block;
+    margin: 0.4em 0;
+    position: relative;
+}
+
+nav.mobile label #menu-icon {
+    float: right;
+}
+
+#menu-icon:before,
+#menu-icon:after {
+    content: '';
+    left: 0;
+    position: absolute;
+    width: 1.5em;
+    transition: 0.5s ease;
+}
+
+#menu-icon:before {
+    top: -0.4em;
+}
+
+#menu-icon:after {
+    top: 0.4em;
+}
+
+/* Close Icon */
+nav.mobile input[type=checkbox]:checked + label #menu-icon {
+    background: transparent;
+}
+
+nav.mobile input[type=checkbox]:checked + label #menu-icon:before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+nav.mobile input[type=checkbox]:checked + label #menu-icon:after {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+/*** MENU ***/
+/* Overlay */
+#overlay {
+    background-color: #ffffff;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    transition: 0.5s ease;
+}
+
+nav.mobile input:checked ~ #overlay {
+    opacity: 1;
+    pointer-events: auto;
+    transition: 0.5s ease;
+}
+
+/* List */
+nav.mobile h2 {
+    font-size: 1em;
+    list-style: none;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    font-family: 'work';
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+nav.mobile input:checked ~ h2 {
+    margin: 1em;
+    max-height: 2em; /* Set specific height for expanded state */
+    opacity: 1;
+    padding-top: 2em;
+    color: #191a23;
+}
+
+/* Horizontal Rule */
+nav.mobile hr {
+    border-color: black;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+nav.mobile input:checked ~ hr {
+    opacity: 1;
+    margin: 1em 100px;
+}
+
+/* List Items */
+nav.mobile ul {
+    font-size: 1em;
+    text-transform: uppercase;
+    list-style: none;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0em;
+    text-align: center;
+    transition: 0.5s ease;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+nav.mobile input:checked ~ ul {
+    margin: 1em;
+    max-height: 15em; /* Set specific height */
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+nav.mobile li{
+    background-color: #ffff;
+    color: #191a23;
+    transition: 0.5s ease;
+}
+
+nav.mobile ul > li {
+    margin: 0.5em 0;
+    margin-left: 4em;
+    margin-right: 4em;
+    line-height: 2em;
+    border-radius: 12px;
+    font-weight: 400;
+    transition: 0.5s ease;
+}
+
+nav.mobile ul a {
+    color: #191a23 !important;
+    text-decoration: none;
+    padding: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    transition: 0.5s ease;
+}
+
+nav.mobile ul a:hover {
+    text-decoration: 4px solid underline #b9ff66;
+}
+
+/* end MOBILE NAVBAR */
+
+
+header.desktop{
+    display: block;
+}
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -173,6 +388,10 @@ nav img{
     font-weight: normal;
     line-height: 1.5em;
     margin-top: 2em;
+}
+
+  .hero .flex1 .mobile-hero-img-container img{
+    display: none;
 }
 
 .hero .flex2{
@@ -1052,3 +1271,6 @@ footer{
       transform: translateY(0);
     }
   }
+
+
+
