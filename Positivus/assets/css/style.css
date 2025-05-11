@@ -43,8 +43,6 @@ body{
     background-color: var(--white);
     color: var(--black);
     font-family: 'Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-left: 4em;
-    margin-right: 4em;
 }
 
 /* UTILITIES */
@@ -60,6 +58,7 @@ button.primary-btn{
     transition: all 0.3s ease;
 }
 
+
 div.section-header{
     display: flex;
     justify-content: left;
@@ -67,6 +66,12 @@ div.section-header{
     gap: 2em;
     width: 70%;
     margin-bottom: 4em;
+    margin-left: 4em;
+    margin-right: 4em;
+
+    /* controls shrink*//* 
+    width: 100%; */
+    max-width: 1400px;
 }
 
 div.section-header h1{
@@ -81,6 +86,16 @@ div.section-header p{
     font-size: 1em;
     font-weight: normal;
 }
+
+section.position{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4em;
+    margin-right: 4em;
+    margin-bottom: 8em;
+}
 /* end UTILITIES */
 
 
@@ -90,10 +105,12 @@ nav{
     justify-content: space-between;
     align-items: center;
     margin-top: 4em;
+    margin-left: 4em;
+    margin-right: 4em;
 }
 
 nav img{
-    width: 185px;
+    width: 90%;
 }
 
 .nav-items{
@@ -130,7 +147,7 @@ nav img{
     margin-bottom: 8em;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .hero .flex1{
@@ -149,8 +166,13 @@ nav img{
     margin-top: 2em;
 }
 
+.hero .flex2{
+    display: flex;
+    justify-content: right;
+}
+
 .hero .flex2 img{
-    width: 500px;
+    width: 90%;
 }
 
 .hero button{
@@ -167,6 +189,7 @@ nav img{
 
 
 /* SERVICES */
+
 .services{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -182,7 +205,18 @@ nav img{
     border-bottom: 6px solid var(--black);
     display: flex;
     justify-content: space-between;
+    gap: 3em;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
 }
+
+.services .box:hover{
+    transform: scale(1.03);/* 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); */
+}
+
 
 .services .box:nth-child(1){
     background-color: var(--grey);
@@ -254,15 +288,15 @@ nav img{
 
 
 /* THINGS */
-.things{
-    margin-top: 6em;
-    margin-bottom: 8em;
+.things{/* 
+    margin-bottom: 8em; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--grey);
     padding-left: 4em;
-    border-radius: 40px;
+    border-radius: 40px;/* 
+    width: 100%; */
 }
 
 .things img{
@@ -294,14 +328,18 @@ nav img{
 
 
 /* CASE STUDIES */
-.case-studies{
-    margin-bottom:  8em;
+.case-studies{/* 
+    margin-bottom:  8em; */
     padding-top: 4em;
     padding-bottom: 4em;
     background-color: var(--black);
     border-radius: 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    /* controls shrink*/
+    width: 100%;
+    max-width: 1400px;
 }
 
 .case-studies p{
@@ -338,11 +376,15 @@ nav img{
     border: 1px solid var(--border);
     border-bottom: 6px solid var(--black);
     border-radius: var(--radius);
-    margin: 20px 0;
+    margin-bottom: 20px;
     overflow: hidden;
     background: var(--grey);
     transition: all var(--anim);
-    padding: 1em;
+    padding: 1em;   
+
+    /* controls shrink*/
+    width: 100%;
+    max-width: 1400px;
   }
 
   .accordion.open {
@@ -441,6 +483,9 @@ nav img{
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
     margin-bottom: 2em;
+        /* controls shrink*/
+        width: 100%;
+        max-width: 1400px;
 }
 
 .team .box{
@@ -500,12 +545,19 @@ nav img{
 
 
 /* TESTIMONIALS */
-.testimonial{
+.testimonials{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--black);
+    border-radius: 40px;
+    padding: 2em;
+
+    /* controls shrink*/
+    width: 100%;
+    max-width: 1400px;
+
 }
 
 .slider-container {
@@ -513,7 +565,6 @@ nav img{
     overflow: hidden;
     position: relative;
     background-color: var(--black);
-    border-radius: 40px;
   }
   .slides {
     display: flex;
@@ -523,7 +574,6 @@ nav img{
   .slide {
     width: 100%;
     flex-shrink: 0;
-    padding: 2em;
     min-height: 200px;
     display: flex;
     align-items: center;
@@ -610,15 +660,12 @@ nav img{
 
   
   .testimonials .buttons {
-/*     position: absolute;
+    position: absolute;
     top: 50%;
-    width: 100%; */
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-    margin-top: 2em;/* 
-    transform: translateY(-50%); */
+    justify-content: space-between;
+    transform: translateY(-50%);
   }
   
   .testimonials button {
@@ -652,6 +699,9 @@ nav img{
     padding: 2em 4em;
     padding-right: 0em;
     border-radius: 40px;
+    /* controls shrink*/
+    width: 100%;
+    max-width: 1400px;
 }
 
 .contact img{
@@ -721,9 +771,9 @@ nav img{
     font-weight: 500;
 }
 
-.contact-container{
+/* .contact-container{
     margin-top: 2em;
-}
+} */
 .contact-container span{
     font-size: 0.9em;
     font-weight: 500;
