@@ -71,7 +71,7 @@ div.section-header{
 
     /* controls shrink*//* 
     width: 100%; */
-    max-width: 1400px;
+    max-width: 1600px;
 }
 
 div.section-header h1{
@@ -143,8 +143,8 @@ nav img{
 
 /* HERO */
 .hero{
-    margin-top: 4em;
-    margin-bottom: 8em;
+    margin-top: 4em;/* 
+    margin-bottom: 4em; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -185,7 +185,23 @@ nav img{
     background-color: var(--green);
     color: var(--black);
 }
-/* EDN HERO */
+/* ENS HERO */
+
+
+
+/* PARTNERS */
+.partners{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1600px;
+}
+
+.partners img{
+    width: 9%;
+}
+/* END PARTNERS */
 
 
 /* SERVICES */
@@ -194,6 +210,9 @@ nav img{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2em;
+
+    width: 100%;
+    max-width: 1600px;
 }
 
 .services .box{
@@ -295,8 +314,9 @@ nav img{
     align-items: center;
     background-color: var(--grey);
     padding-left: 4em;
-    border-radius: 40px;/* 
-    width: 100%; */
+    border-radius: 40px;
+    width: 100%;
+    max-width: 1600px;
 }
 
 .things img{
@@ -339,7 +359,7 @@ nav img{
 
     /* controls shrink*/
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
 }
 
 .case-studies p{
@@ -384,7 +404,7 @@ nav img{
 
     /* controls shrink*/
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
   }
 
   .accordion.open {
@@ -485,7 +505,7 @@ nav img{
     margin-bottom: 2em;
         /* controls shrink*/
         width: 100%;
-        max-width: 1400px;
+        max-width: 1600px;
 }
 
 .team .box{
@@ -556,7 +576,7 @@ nav img{
 
     /* controls shrink*/
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
 
 }
 
@@ -701,7 +721,7 @@ nav img{
     border-radius: 40px;
     /* controls shrink*/
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
 }
 
 .contact img{
@@ -729,6 +749,7 @@ nav img{
     display: flex;
     align-items: center;
     gap: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 
@@ -827,6 +848,10 @@ nav img{
 
 
 /* FOOTER */
+footer{
+    margin-left: 4em;
+    margin-right: 4em;
+}
 .footer{
     background-color: var(--black);
     min-height: 100px;
@@ -900,9 +925,7 @@ nav img{
     gap: 1em;
 }
 
-.footer-nav .links i{
-    
-}
+
 
 .footer .footer-contact{
     display: flex;
