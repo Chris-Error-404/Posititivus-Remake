@@ -170,10 +170,28 @@
     .services .box-txt-btm img{ /* link arrows*/
         width: 25px;
     }
-    
-
 
 }
+/* END SERVICES */
+
+
+
+/*THINGS*/
+@media (max-width: 1024px){
+    .things{
+        flex-direction: column;
+        padding: 2em;
+    }
+
+    .things img{
+        display: none;
+    }
+
+    .things .things-txt{
+        width: 100%;
+    }
+}
+/*END THINGS*/
 
 @media (max-width: 1024px){
     footer{
@@ -184,7 +202,7 @@
         display: none;
     }
 
-    .team, .testimonials, .team-container, .accordion-container, .case-studies, .things, .accordion, .contact, .section-header, .partners{
+    .team, .testimonials, .team-container, .accordion-container, .case-studies,.accordion, .contact, .section-header, .partners{
         display: none;
     }
 
