@@ -17,6 +17,7 @@
         width: 90%;
         margin-left: 1em;
         margin-right: 1em;
+        margin-bottom: 2em;
     }
 }
 /* end UTILITIES */
@@ -135,27 +136,37 @@
     .services{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        gap: 2em;
+        gap: 1em;
     
         width: 100%;
-        max-width: 1600px;
+        max-width: 1000px;
     }
 
     .services .box{
-    padding: 2em;
-    padding-top: 2.5em;
-    padding-bottom: 2.5em;
-    border-radius: 40px;
-    border: 1px solid var(--black);
-    border-bottom: 6px solid var(--black);
-    display: flex;
-    justify-content: space-between;
     gap: 1em;
-    cursor: pointer;
-    width: 100%;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
-}
+    }
+
+    .services .box img.illustration{
+        width: 40%;
+        height: auto;
+    }
+
+    .services .box-txt{
+        gap: 1.5em
+    }
+
+    .services .box .box-txt h1{
+        font-size: 1.2em;
+    }
+
+    .services .box-txt-btm a{
+        font-size: 1em;
+    }
+
+    .services .box-txt-btm img{ /* link arrows*/
+        width: 25px;
+    }
+    
 
 
 }
@@ -169,7 +180,7 @@
         display: none;
     }
 
-    .team, .testimonials, .team-container, .accordion-container, .case-studies, .things, .services, .accordion, .contact, .section-header, .partners{
+    .team, .testimonials, .team-container, .accordion-container, .case-studies, .things, .accordion, .contact, .section-header, .partners{
         display: none;
     }
 
