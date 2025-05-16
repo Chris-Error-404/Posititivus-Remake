@@ -4,7 +4,8 @@
     section.position{
         margin-left: 1em;
         margin-right: 1em;
-        margin-bottom: 8em;
+        margin-top: 0em;
+        margin-bottom: 4em;
         max-width: 1000px;
     }
 
@@ -18,6 +19,12 @@
         margin-left: 1em;
         margin-right: 1em;
         margin-bottom: 2em;
+    }
+
+    div.section-header h1{
+        font-size: 1.9em;
+        border-radius: 10px;
+        width: 60%;
     }
 }
 /* end UTILITIES */
@@ -156,7 +163,7 @@
     }
 
     .services .box-txt{
-        gap: 1.5em
+        gap: 2em
     }
 
     .services .box .box-txt h1{
@@ -191,19 +198,225 @@
     .things .things-txt{
         width: 100%;
     }
+
+    .things-txt button{
+        width: 100%
+    }
 }
 /*END THINGS*/
 
+
+/* ACCORDION */
 @media (max-width: 1024px){
-    footer{
-       display: none; 
+
+.accordion-container .accordion:last-of-type{
+    margin-bottom: 0;
+}    
+
+.accordion{
+    border-radius: 50px;
+}    
+/* .accordion-header span{
+    width: 70%;
+} */
+.accordion-header span {
+    font-size: 1.2em;
+  }
+
+.accordion-header span.num{
+    font-size: 1.5em;
+  }  
+
+  .accordion-header i {
+    max-width: 40px;
+    max-height: 40px;
+    line-height: 40px;
+  }
+}
+/* END ACCORDION */
+
+
+/* TEAM */
+@media (max-width: 1024px){
+    .team{
+        grid-template-columns: repeat(1, 1fr);
     }
 
-    .contact{
+    .team .box:hover{
+        background-color: var(--white);
+        transform: scale(1);
+    }
+
+    .team-btn-container button{
+        min-width: 100%;
+    }
+}
+/* END TEAM */
+
+
+
+/* TESTIMONIAL */
+
+@media (max-width: 1024px){
+    .testimonials{
+        padding: 1em;
+    }
+
+    .slide-card{
+        width: 90%;
+      }
+   
+  .testimonials button{
+    padding: 1em;
+  }
+}
+/* END TESTIMONIAL */
+
+
+
+
+/* CONTACT */
+
+@media (max-width: 1024px){
+
+.contact{
+    padding: 4em 2em;
+}    
+
+.contact img{
+    display:  none;
+}
+
+.contact button{
+    width: 100%;
+}
+
+.contact-container input{
+    width: 100%;
+}
+
+.contact-container textarea{
+    width: 100%;
+    max-width: 100%;
+}
+
+}
+/* END CONTACT */
+
+
+/* FOOTER */
+@media (max-width: 1024px){
+    footer{
+        margin: 0;
+    }
+
+    .footer{
+        border-radius: 0px;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .footer img{
+        width: 150px;
+    }
+
+    .footer-nav{
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .footer-nav-items{
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .footer-nav-items a{
+        text-decoration: none;
+    }
+
+    .footer-nav .links{
         display: none;
     }
 
-    .team, .testimonials, .team-container, .accordion-container, .case-studies,.accordion, .contact, .section-header, .partners{
+    .footer .footer-contact{
+        padding-top: 2.5em;
+        flex-direction: column;
+        padding-bottom: 2em;
+    }
+
+    .footer .contact-txt{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        width: 80%;
+        margin-bottom: 2em;
+    }
+
+    .footer .contact-txt h3{
+        margin-bottom: 1em;
+    }
+
+    .footer .contact-form{
+        flex-direction: column;
+        padding: 2em;
+        width: 100%;
+    }
+
+    .footer .contact-form input{
+        width: 100%;
+    }
+
+    .footer .contact-form button{
+        width: 100%;
+    }
+
+    /* mobile foooter links */
+    .mobile-links{
+        display: flex;
+        gap: 1em;
+        margin-top: 1.5em;
+    }
+
+    .footer-btm{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-btm a:nth-child(2){
+        margin-left: 0em;
+        text-decoration: none;
+    }
+
+    .footer .github{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* END FOOTER */
+
+
+
+/* CASE STUDIES */
+.case-studies{
+    display: none;
+}
+/*END CASE STUDIES*/
+
+
+
+
+
+
+@media (max-width: 1024px){
+
+
+ .case-studies, .partners{
         display: none;
     }
 
