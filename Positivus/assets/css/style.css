@@ -1104,14 +1104,7 @@ section.position-hero{
 /* ============================= */
 /* MOBILE NAVBAR (mobile only)   */
 /* ============================= */
-@media (max-width: 768px) {
-    /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-  
+@media (max-width: 768px){
     /* STICKY HEADER */
     .mobile-header {
       position: sticky;
@@ -1225,6 +1218,7 @@ section.position-hero{
       color: var(--green);
     }
   } */
+}
   
   /* ============================= */
   /* DESKTOP: HIDE MOBILE NAVBAR   */
