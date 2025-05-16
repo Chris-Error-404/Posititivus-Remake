@@ -58,18 +58,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //MOBILE NAV SCRIPT
+/* ============================= */
+/* CLOSE MENU WHEN CLICK OUTSIDE */
+/* AND PREVENT BODY SCROLL IF DESIRED */
+/* ============================= */
 document.addEventListener('click', function(event) {
   const navToggle = document.querySelector('.mobile-header__toggle');
   const header    = document.querySelector('.mobile-header');
 
-  // Only try to close if the menu is currently open
-  if (navToggle.checked) {
-    // If click happened outside the header, uncheck
-    if (!header.contains(event.target)) {
-      navToggle.checked = false;
-    }
+  // Close when clicking outside header
+  if (navToggle.checked && !header.contains(event.target)) {
+    navToggle.checked = false;
   }
 });
+
+// Optional: disable body scroll when menu open
+document.querySelector('.mobile-header__toggle')
+  .addEventListener('change', function() {
+    document.body.style.overflow = this.checked ? 'hidden' : '';
+  });
+
 
 
 //EXPERIMENTAL BOX FLOAT UP SCRIPT
