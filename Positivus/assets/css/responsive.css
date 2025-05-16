@@ -22,7 +22,7 @@
     }
 
     div.section-header h1{
-        font-size: 1.9em;
+        font-size: 1.8em;
         border-radius: 10px;
         width: 80%;
     }
@@ -416,8 +416,29 @@
 
 
 /* CASE STUDIES */
-.case-studies{
-    display: none;
+@media (max-width: 1024px){
+    .case-studies{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2em;
+    
+        /* controls shrink*/
+        width: 100%;
+        max-width: 1600px;
+    }
+
+    .case-studies .box:nth-child(1){
+        border-bottom: 1px solid var(--grey);
+        padding-bottom: 2em;
+    }
+
+    .case-studies .box:nth-child(2){
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid var(--grey);
+        padding-bottom: 2em;
+    }
+    
+
 }
 /*END CASE STUDIES*/
 
@@ -428,8 +449,7 @@
 
 @media (max-width: 1024px){
 
-
- .case-studies, .partners{
+ .partners{
         display: none;
     }
 
