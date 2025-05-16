@@ -173,6 +173,7 @@ nav img{
 
 .hero.animate-in {
     animation: fadeUp 0.8s ease-out forwards;
+    transform: translateY(0);
   }
 
 
