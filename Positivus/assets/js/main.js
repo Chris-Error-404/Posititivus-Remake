@@ -1,88 +1,56 @@
-//ACCORDION SCRIPT
+// ACCORDION
 function toggleAccordion(header) {
-    const wrapper = header.parentElement;
-    const icon    = header.querySelector('i');
+  const wrapper = header.closest('.accordion');
+  const icon    = header.querySelector('i');
 
-    // Close any others
-    document.querySelectorAll('.accordion.open').forEach(acc => {
-      if (acc !== wrapper) {
-        acc.classList.remove('open');
-        acc.querySelector('i')
-           .classList.replace('fa-minus', 'fa-plus');
-      }
-    });
-
-    // Toggle this one
-    const isOpen = wrapper.classList.toggle('open');
-    icon.classList.replace(
-      isOpen ? 'fa-plus'  : 'fa-minus',
-      isOpen ? 'fa-minus' : 'fa-plus'
-    );
-}
-
-
-//TESTIMONIAL CAROUSEL SCRIPT
-let index = 0;
-const slides = document.querySelector('.slides');
-
-function showSlide() {
-    slides.style.transform = `translateX(-${index * 100}%)`;
-}
-
-function nextSlide() {
-    index = (index + 1) % 3;
-    showSlide();
-}
-
-// Auto-slide every 3 seconds
-setInterval(nextSlide, 5000);
-
-// Allow manual navigation
-function prevSlide() {
-    index = (index - 1 + 3) % 3;
-    showSlide();
-}
-
-
-
-//ACCORDION FLOAT UP SCRIPT
-document.addEventListener('DOMContentLoaded', () => {
-  const accordions = document.querySelectorAll('.accordion');
-
-  // 1) Set up the observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
-      }
-    });
-  }, {
-    threshold: 0.1  // fire when 10% visible
+  document.querySelectorAll('.accordion.open').forEach(acc => {
+    if (acc !== wrapper) {
+      acc.classList.remove('open');
+      acc.querySelector('i').classList.replace('fa-minus', 'fa-plus');
+    }
   });
 
-  // 2) Assign a stagger delay & start observing each
-  accordions.forEach((el, index) => {
-    // e.g. 0.1s, 0.2s, 0.3s, …
-    const delay = (index + 1) * 0.05;  
-    el.style.setProperty('--delay', `${delay}s`);
+  const isOpen = wrapper.classList.toggle('open');
+  if (isOpen) {
+    icon.classList.replace('fa-plus', 'fa-minus');
+  } else {
+    icon.classList.replace('fa-minus', 'fa-plus');
+  }
+}
+
+// TESTIMONIAL CAROUSEL
+let index = 0;
+const slides = document.querySelector('.slides');
+function showSlide() {
+  slides.style.transform = `translateX(-${index * 100}%)`;
+}
+function nextSlide() {
+  index = (index + 1) % 3;
+  showSlide();
+}
+setInterval(nextSlide, 5000);
+function prevSlide() {
+  index = (index - 1 + 3) % 3;
+  showSlide();
+}
+
+// ACCORDION FLOAT-UP
+document.addEventListener('DOMContentLoaded', () => {
+  const accordions = document.querySelectorAll('.accordion');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('visible', entry.isIntersecting);
+    });
+  }, { threshold: 0.1 });
+
+  accordions.forEach((el, i) => {
+    el.style.setProperty('--delay', `${(i+1)*0.05}s`);
     observer.observe(el);
   });
 });
 
-// your existing toggle function
-function toggleAccordion(headerEl) {
-  const accordion = headerEl.closest('.accordion');
-  accordion.classList.toggle('open');
-}
-
-
-
-
-//HERO SCRIPT
-  document.addEventListener('DOMContentLoaded', () => {
-    const hero = document.querySelector('.hero');
-    // small timeout to ensure CSS is ready
-    setTimeout(() => hero.classList.add('animate-in'), 50);
-  });
+// HERO ANIMATION
+document.addEventListener('DOMContentLoaded', () => {
+  const hero = document.querySelector('.hero');
+  setTimeout(() => hero.classList.add('animate-in'), 50);
+});
