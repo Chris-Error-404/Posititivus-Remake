@@ -47,6 +47,7 @@ body{
 
 body::before {
     content: "";
+    margin: 5vh;
     position: fixed;
     top: 0; left: 0;
     width: 100vw; height: 100vh;
@@ -1135,7 +1136,7 @@ section.position-hero{
     }
   
     .mobile-header__logo {
-      max-height: 1.5em;
+    height: 1.3em;
       width: auto;
     }
   
