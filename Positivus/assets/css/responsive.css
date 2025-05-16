@@ -24,7 +24,7 @@
     div.section-header h1{
         font-size: 1.9em;
         border-radius: 10px;
-        width: 60%;
+        width: 80%;
     }
 }
 /* end UTILITIES */
@@ -86,6 +86,13 @@
 
 /* HERO */
 @media (max-width:1024px){
+
+    section.position-hero{
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-bottom: 0em;
+    }
+
     .hero{
         flex-direction: column;;
         gap: 2em
@@ -216,9 +223,14 @@
 .accordion{
     border-radius: 50px;
 }    
-/* .accordion-header span{
-    width: 70%;
-} */
+.accordion-header span{
+    width: 65%;
+}
+
+.accordion-header{
+    padding-left: 1em;
+    padding-right: 1em;
+}
 .accordion-header span {
     font-size: 1.2em;
   }
@@ -264,6 +276,7 @@
 
     .slide-card{
         width: 90%;
+        padding: 1em;
       }
    
   .testimonials button{
@@ -317,7 +330,7 @@
     }
 
     .footer img{
-        width: 150px;
+        width: 130px;
     }
 
     .footer-nav{
