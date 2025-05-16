@@ -97,7 +97,10 @@
     .hero{
         flex-direction: column;
         gap: 2em;
-        margin-top: 1em;
+        margin-top: -30px;            /* negate the translate */
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out, margin-top 0.8s ease-out;
     }
 
     .hero .flex1{
