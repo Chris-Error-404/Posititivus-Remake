@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   floatUps.forEach((el, i) => {
     // set stagger via --delay
-    el.style.setProperty('--delay', `${(i + 1) * 0.05}s`);
+    el.style.setProperty('--delay', `${(i + 1) * 0.02}s`);
     observer.observe(el);
   });
 });
