@@ -67,6 +67,7 @@ button.primary-btn{
     border: 1px solid var(--black);
     border-radius: 10px;
     cursor: pointer;
+    color: var(--black);
     transition: all 0.3s ease;
 }
 
