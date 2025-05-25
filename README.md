@@ -36,6 +36,44 @@ This project is a remake of my initial attempt at transforming a web design into
 
 ---
 
+## 📝 Features
+
+✅ Fully responsive design
+
+✅ Semantic and accessible HTML
+
+✅ Clean, modular CSS
+
+✅ Minimalist, faithful remake of the original design
+
+✅ Live-deployed using Vercel
+
+---
+
+## 📌 Acknowledgments
+
+🎨 Design by: Figma – [Figma – Positivus Landing Page](https://www.figma.com/community/file/1230604708032389430/positivus-landing-page-design)
+
+💡 Inspiration from the original creator’s elegant, modern style
+
+---
+
+## 🤝 Contributions
+
+Contributions, suggestions, and feedback are welcome!
+
+📂 Fork the repository
+
+🛠 Create a new branch (git checkout -b feature/yourFeature)
+
+🔁 Commit your changes (git commit -m 'Add new feature')
+
+🚀 Push to the branch (git push origin feature/yourFeature)
+
+🔃 Open a Pull Request
+
+---
+
 ## 📁 Getting Started
 
 To run this project locally, follow these steps:
@@ -45,3 +83,5 @@ To run this project locally, follow these steps:
 ```bash
 git clone https://github.com/yourusername/positivus-remake.git
 cd positivus-remake
+
+
