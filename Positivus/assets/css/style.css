@@ -1104,7 +1104,7 @@ section.position-hero{
 /* ============================= */
 /* MOBILE NAVBAR (mobile only)   */
 /* ============================= */
-@media (max-width: 768px){
+@media (max-width: 1024px){
     /* STICKY HEADER */
     .mobile-header {
       position: sticky;
