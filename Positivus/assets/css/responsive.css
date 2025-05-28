@@ -402,6 +402,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 1em;
     }
 
     .footer-btm a:nth-child(2){
