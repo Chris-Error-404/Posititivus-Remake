@@ -568,19 +568,21 @@ nav img{
     justify-content: center;
     align-items: center;
     gap: 1em;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease;
     cursor: pointer;
 }
 
 .team .box .visible {
     opacity: 1;
     transform: translateY(0);
-  }
+    transition: all 0.3s ease-in-out;
+}
 
 .team .box:hover{
-    background-color: var(--green);
-    transform: scale(1.03);
+  background-color: var(--green);
+  transform: scale(1.03);
 }
+
 
 .team .box img{
     width: 100%;
